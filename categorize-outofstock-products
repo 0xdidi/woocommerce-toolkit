@@ -1,0 +1,11 @@
+function action_woocommerce_no_stock( $wc_get_product ) {
+    // Set category ids
+    $wc_get_product->set_category_ids( array( 39, 2 ) );
+
+    // Product set tag ids
+    $wc_get_product->set_tag_ids( array( 40 ) );
+
+    // Save
+    $wc_get_product->save();
+}
+add_action( 'woocommerce_no_stock', 'action_woocommerce_no_stock', 10, 1 );
